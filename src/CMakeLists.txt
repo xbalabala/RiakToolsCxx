@@ -1,7 +1,7 @@
 file(GLOB SOURCES "*.cpp")
-add_executable(riakrepair.bin ${SOURCES})
+add_executable(riakcompact ${SOURCES})
 
-target_link_libraries(riakrepair.bin libleveldb
+target_link_libraries(riakcompact libleveldb
   -lpthread -lz
   ${Boost_LIBRARIES}
 )
@@ -9,11 +9,11 @@ target_link_libraries(riakrepair.bin libleveldb
 
 set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
 
-install(TARGETS riakrepair.bin DESTINATION "/bin")
+install(TARGETS riakcompact DESTINATION "/bin")
 
 SET(CPACK_GENERATOR "DEB")
  
-SET(CPACK_PACKAGE_DESCRIPTION "Riak Repair")
+SET(CPACK_PACKAGE_DESCRIPTION "C++ leveldb Riak tools")
 SET(CPACK_PACKAGE_VENDOR "Helm & Walter IT-Solitions GbR")
 SET(CPACK_PACKAGE_CONTACT "daniel.walter@helmundwalter.de")
 SET(CPACK_PACKAGE_VERSION_MAJOR "0")
