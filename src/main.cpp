@@ -12,17 +12,17 @@ int main(int argc, char* argv[]) {
     //basho, see https://github.com/hw-dwalter/leveldb/blob/develop/README#L42
     leveldb::Options options;
 
-    options.filter_policy = leveldb::NewBloomFilterPolicy2(16);
+    options.filter_policy = leveldb::NewBloomFilterPolicy(16);
     options.write_buffer_size = 62914560;  // 60Mbytes
-    options.total_leveldb_mem = 2684354560; // 2.5Gbytes (details below)
-    options.env = leveldb::Env::Default();
+    // options.total_leveldb_mem = 2684354560; // 2.5Gbytes (details below)
+    // options.env = leveldb::Env::Default();
 
     fs::path p(fs::current_path());
     if (argc > 1) {
         p = fs::system_complete(argv[1]);
     } else {
         std::cout << "usage:   " << argv[0] << " [path]" << std::endl;
-	return 0;
+        return 0;
     }
 
     fs::directory_iterator end_iter;

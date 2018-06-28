@@ -1,3 +1,13 @@
 .*
 !.gitignore
 build
+external
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+install_manifest.txt
+compile_commands.json
+*.cmake
+src/riakcompact
